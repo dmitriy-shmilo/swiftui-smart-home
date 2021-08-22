@@ -12,6 +12,11 @@
 		5DB41BA426D2EB060074A300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DB41BA326D2EB060074A300 /* Assets.xcassets */; };
 		5DB41BA726D2EB060074A300 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DB41BA626D2EB060074A300 /* Preview Assets.xcassets */; };
 		5DB41BAF26D2F21D0074A300 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BAE26D2F21D0074A300 /* Color.swift */; };
+		5DB41BB226D2F5C90074A300 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BB126D2F5C90074A300 /* HomeView.swift */; };
+		5DB41BB426D2F6F70074A300 /* ToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BB326D2F6F70074A300 /* ToolbarView.swift */; };
+		5DB41BB626D2FE4E0074A300 /* DataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BB526D2FE4E0074A300 /* DataCardView.swift */; };
+		5DB41BB826D2FEEA0074A300 /* RoomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BB726D2FEEA0074A300 /* RoomCardView.swift */; };
+		5DB41BBA26D301300074A300 /* DeviceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BB926D301300074A300 /* DeviceCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		5DB41BA626D2EB060074A300 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5DB41BA826D2EB060074A300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DB41BAE26D2F21D0074A300 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		5DB41BB126D2F5C90074A300 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5DB41BB326D2F6F70074A300 /* ToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarView.swift; sourceTree = "<group>"; };
+		5DB41BB526D2FE4E0074A300 /* DataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardView.swift; sourceTree = "<group>"; };
+		5DB41BB726D2FEEA0074A300 /* RoomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCardView.swift; sourceTree = "<group>"; };
+		5DB41BB926D301300074A300 /* DeviceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +64,12 @@
 		5DB41B9E26D2EB050074A300 /* SmartHome */ = {
 			isa = PBXGroup;
 			children = (
-				5DB41BAE26D2F21D0074A300 /* Color.swift */,
-				5DB41B9F26D2EB050074A300 /* SmartHomeApp.swift */,
-				5DB41BA126D2EB050074A300 /* ContentView.swift */,
-				5DB41BA326D2EB060074A300 /* Assets.xcassets */,
 				5DB41BA826D2EB060074A300 /* Info.plist */,
+				5DB41BAE26D2F21D0074A300 /* Color.swift */,
+				5DB41BA126D2EB050074A300 /* ContentView.swift */,
+				5DB41B9F26D2EB050074A300 /* SmartHomeApp.swift */,
+				5DB41BA326D2EB060074A300 /* Assets.xcassets */,
+				5DB41BB026D2F5BD0074A300 /* Home */,
 				5DB41BA526D2EB060074A300 /* Preview Content */,
 			);
 			path = SmartHome;
@@ -70,6 +81,18 @@
 				5DB41BA626D2EB060074A300 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5DB41BB026D2F5BD0074A300 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5DB41BB526D2FE4E0074A300 /* DataCardView.swift */,
+				5DB41BB926D301300074A300 /* DeviceCardView.swift */,
+				5DB41BB126D2F5C90074A300 /* HomeView.swift */,
+				5DB41BB726D2FEEA0074A300 /* RoomCardView.swift */,
+				5DB41BB326D2F6F70074A300 /* ToolbarView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +165,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DB41BA226D2EB050074A300 /* ContentView.swift in Sources */,
+				5DB41BB426D2F6F70074A300 /* ToolbarView.swift in Sources */,
+				5DB41BB226D2F5C90074A300 /* HomeView.swift in Sources */,
+				5DB41BB626D2FE4E0074A300 /* DataCardView.swift in Sources */,
+				5DB41BBA26D301300074A300 /* DeviceCardView.swift in Sources */,
+				5DB41BB826D2FEEA0074A300 /* RoomCardView.swift in Sources */,
 				5DB41BA026D2EB050074A300 /* SmartHomeApp.swift in Sources */,
 				5DB41BAF26D2F21D0074A300 /* Color.swift in Sources */,
 			);
