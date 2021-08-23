@@ -10,17 +10,19 @@ import SwiftUI
 struct RoomDetailsView: View {
 	
 	@Environment(\.presentationMode) var presentation
+	@State private var counterProgress: Double = 0.0
+	private let counterSteps = 100.0
 	
-    var body: some View {
-        ScrollView {
-        	VStack {
-        		HStack {
-        			Button(action: {
-        				presentation.wrappedValue.dismiss()
+	var body: some View {
+		ScrollView {
+			VStack {
+				HStack {
+					Button(action: {
+						presentation.wrappedValue.dismiss()
 					}) {
-        				Image(systemName: "chevron.left")
-        					.foregroundColor(.font)
-        					.font(.system(size: 16))
+						Image(systemName: "chevron.left")
+							.foregroundColor(.font)
+							.font(.system(size: 16))
 					}
 					
 					Spacer()
@@ -32,8 +34,18 @@ struct RoomDetailsView: View {
 				
 				ScrollView(.horizontal, showsIndicators: false) {
 					HStack {
-						SensorDataCardView(data: "24° C", subtitle: "Temperature", background: .dataBlue)
-						SensorDataCardView(data: "70%", subtitle: "Humidity", background: .dataOrange)
+						SensorDataCardView(data: "\(floor(24 * counterProgress))° C", subtitle: "Temperature", background: .dataBlue)
+						SensorDataCardView(data: "\(floor(70 * counterProgress))%", subtitle: "Humidity", background: .dataOrange)
+					}
+					.onAppear {
+						Timer.scheduledTimer(
+							withTimeInterval: 0.75 / counterSteps, repeats: true
+						) { timer in
+							counterProgress += 1.0 / counterSteps
+							if counterProgress >= 1.0 {
+								timer.invalidate()
+							}
+						}
 					}
 				}
 				
@@ -44,13 +56,13 @@ struct RoomDetailsView: View {
 					.padding(.top)
 				
 				PowerChartView()
-					
+				
 				Text("Devices")
 					.foregroundColor(.font)
 					.font(.system(size:18, weight: .bold))
 					.frame(maxWidth: .infinity, alignment: .leading)
 					.padding(.top)
-					
+				
 				DeviceCardView(title: "Smart lamp 1", location: "Living room")
 				DeviceCardView(title: "Smart lamp 2", location: "Living room")
 			}
@@ -58,11 +70,11 @@ struct RoomDetailsView: View {
 		}
 		.background(Color.background.ignoresSafeArea())
 		.navigationBarHidden(true)
-    }
+	}
 }
 
 struct RoomDetailsView_Previews: PreviewProvider {
-    static var previews: some View {
-        RoomDetailsView()
-    }
+	static var previews: some View {
+		RoomDetailsView()
+	}
 }
