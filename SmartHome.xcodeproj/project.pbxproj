@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D9D2BC626D4134400805CBB /* LineGraphShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D2BC526D4134400805CBB /* LineGraphShape.swift */; };
 		5DB41BA026D2EB050074A300 /* SmartHomeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41B9F26D2EB050074A300 /* SmartHomeApp.swift */; };
 		5DB41BA226D2EB050074A300 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BA126D2EB050074A300 /* ContentView.swift */; };
 		5DB41BA426D2EB060074A300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DB41BA326D2EB060074A300 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D9D2BC526D4134400805CBB /* LineGraphShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraphShape.swift; sourceTree = "<group>"; };
 		5DB41B9C26D2EB050074A300 /* SmartHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DB41B9F26D2EB050074A300 /* SmartHomeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHomeApp.swift; sourceTree = "<group>"; };
 		5DB41BA126D2EB050074A300 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				5DB41BC026D4004D0074A300 /* PowerChartView.swift */,
 				5DB41BBC26D3CE3A0074A300 /* RoomDetailsView.swift */,
 				5DB41BBE26D3CF1E0074A300 /* SensorDataCardView.swift */,
+				5D9D2BC526D4134400805CBB /* LineGraphShape.swift */,
 			);
 			path = RoomDetails;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				5DB41BBD26D3CE3A0074A300 /* RoomDetailsView.swift in Sources */,
 				5DB41BB826D2FEEA0074A300 /* RoomCardView.swift in Sources */,
 				5DB41BA026D2EB050074A300 /* SmartHomeApp.swift in Sources */,
+				5D9D2BC626D4134400805CBB /* LineGraphShape.swift in Sources */,
 				5DB41BAF26D2F21D0074A300 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

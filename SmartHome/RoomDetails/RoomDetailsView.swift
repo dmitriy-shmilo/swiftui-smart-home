@@ -55,7 +55,10 @@ struct RoomDetailsView: View {
 					.frame(maxWidth: .infinity, alignment: .leading)
 					.padding(.top)
 				
-				PowerChartView()
+				PowerChartView(
+					lastWeekData: [24.5,0, 30.0, 12.2, 41.3, 18.9, 39.7],
+					currentWeekData: [14.5, 25.1, 34.0, 12.5, 37.3, 11.0, 0]
+				)
 				
 				Text("Devices")
 					.foregroundColor(.font)
