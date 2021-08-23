@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
 	var body: some View {
 		GeometryReader { proxy in
-		
+			
 			ScrollView {
 				VStack {
 					ToolbarView()
@@ -47,11 +47,13 @@ struct HomeView: View {
 						.padding(.horizontal, 32)
 						
 						ScrollView(.horizontal, showsIndicators: false) {
-							
 							HStack(spacing: 24) {
-								
-								RoomCardView(title: "Living Room", subtitle: "8 devices connected")
-								RoomCardView(title: "Bedroom", subtitle: "2 devices connected")
+								NavigationLink(destination: RoomDetailsView()) {
+									RoomCardView(title: "Living Room", subtitle: "8 devices connected")
+								}
+								NavigationLink(destination: RoomDetailsView()) {
+									RoomCardView(title: "Bedroom", subtitle: "2 devices connected")
+								}
 							}
 							.padding(.leading, 32)
 						}
@@ -88,6 +90,7 @@ struct HomeView: View {
 			}
 			.ignoresSafeArea()
 			.background(Color.background.ignoresSafeArea())
+			.navigationBarHidden(true)
 		}
 	}
 }

@@ -17,6 +17,9 @@
 		5DB41BB626D2FE4E0074A300 /* DataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BB526D2FE4E0074A300 /* DataCardView.swift */; };
 		5DB41BB826D2FEEA0074A300 /* RoomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BB726D2FEEA0074A300 /* RoomCardView.swift */; };
 		5DB41BBA26D301300074A300 /* DeviceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BB926D301300074A300 /* DeviceCardView.swift */; };
+		5DB41BBD26D3CE3A0074A300 /* RoomDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BBC26D3CE3A0074A300 /* RoomDetailsView.swift */; };
+		5DB41BBF26D3CF1E0074A300 /* SensorDataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BBE26D3CF1E0074A300 /* SensorDataCardView.swift */; };
+		5DB41BC126D4004D0074A300 /* PowerChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BC026D4004D0074A300 /* PowerChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		5DB41BB526D2FE4E0074A300 /* DataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCardView.swift; sourceTree = "<group>"; };
 		5DB41BB726D2FEEA0074A300 /* RoomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCardView.swift; sourceTree = "<group>"; };
 		5DB41BB926D301300074A300 /* DeviceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCardView.swift; sourceTree = "<group>"; };
+		5DB41BBC26D3CE3A0074A300 /* RoomDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsView.swift; sourceTree = "<group>"; };
+		5DB41BBE26D3CF1E0074A300 /* SensorDataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataCardView.swift; sourceTree = "<group>"; };
+		5DB41BC026D4004D0074A300 /* PowerChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 				5DB41BA326D2EB060074A300 /* Assets.xcassets */,
 				5DB41BB026D2F5BD0074A300 /* Home */,
 				5DB41BA526D2EB060074A300 /* Preview Content */,
+				5DB41BBB26D3CE290074A300 /* RoomDetails */,
 			);
 			path = SmartHome;
 			sourceTree = "<group>";
@@ -93,6 +100,16 @@
 				5DB41BB326D2F6F70074A300 /* ToolbarView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		5DB41BBB26D3CE290074A300 /* RoomDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5DB41BC026D4004D0074A300 /* PowerChartView.swift */,
+				5DB41BBC26D3CE3A0074A300 /* RoomDetailsView.swift */,
+				5DB41BBE26D3CF1E0074A300 /* SensorDataCardView.swift */,
+			);
+			path = RoomDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +185,10 @@
 				5DB41BB426D2F6F70074A300 /* ToolbarView.swift in Sources */,
 				5DB41BB226D2F5C90074A300 /* HomeView.swift in Sources */,
 				5DB41BB626D2FE4E0074A300 /* DataCardView.swift in Sources */,
+				5DB41BBF26D3CF1E0074A300 /* SensorDataCardView.swift in Sources */,
+				5DB41BC126D4004D0074A300 /* PowerChartView.swift in Sources */,
 				5DB41BBA26D301300074A300 /* DeviceCardView.swift in Sources */,
+				5DB41BBD26D3CE3A0074A300 /* RoomDetailsView.swift in Sources */,
 				5DB41BB826D2FEEA0074A300 /* RoomCardView.swift in Sources */,
 				5DB41BA026D2EB050074A300 /* SmartHomeApp.swift in Sources */,
 				5DB41BAF26D2F21D0074A300 /* Color.swift in Sources */,
