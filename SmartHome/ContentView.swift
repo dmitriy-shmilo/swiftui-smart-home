@@ -7,21 +7,21 @@
 
 import SwiftUI
 
-struct ContentView: View {
-	
-	enum RootPage {
+enum RootPage {
 	case home
 	case rooms
 	case devices
 	case settings
-	}
+}
+
+struct ContentView: View {
 	
 	@State private var currentTab: RootPage = .home
 	
     var body: some View {
     	NavigationView {
     		TabView(selection: $currentTab) {
-    			HomeView()
+				HomeView(currentTab: $currentTab)
     				.tag(RootPage.home)
     				.tabItem {
     					VStack {

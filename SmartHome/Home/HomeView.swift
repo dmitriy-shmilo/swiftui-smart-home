@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
 	let featuredRooms = ModelData.rooms[0..<2]
 	let featuredDevices = ModelData.allDevices[0..<4]
+	@Binding var currentTab: RootPage
 	
 	var body: some View {
 		GeometryReader { proxy in
@@ -50,7 +51,9 @@ struct HomeView: View {
 								.foregroundColor(.font)
 								.font(.system(size:16, weight: .bold))
 							Spacer()
-							Button(action: {}) {
+							Button(action: {
+								currentTab = .rooms
+							}) {
 								Text("See all")
 									.foregroundColor(.secondaryFont)
 									.font(.system(size:12, weight: .bold))
@@ -80,7 +83,9 @@ struct HomeView: View {
 								.foregroundColor(.font)
 								.font(.system(size:16, weight: .bold))
 							Spacer()
-							Button(action: {}) {
+							Button(action: {
+								currentTab = .devices
+							}) {
 								Text("See all")
 									.foregroundColor(.secondaryFont)
 									.font(.system(size:12, weight: .bold))
@@ -115,6 +120,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
 	static var previews: some View {
-		HomeView()
+		HomeView(currentTab: .constant(.home))
 	}
 }
