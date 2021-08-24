@@ -26,6 +26,10 @@ struct ModelData {
 			.reduce(0, +)
 	}
 	
+	static func room(withId: Int) -> Room? {
+		Self.rooms.first { room in room.id == withId}
+	}
+	
 	private static var lastId = 0
 	private static func generateRooms() -> [Room] {
 		["Living Room", "Dining Room", "Bedroom"].enumerated().map { (i, name) in

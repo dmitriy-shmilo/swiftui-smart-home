@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RoomCardView: View {
-	let title: String
-	let subtitle: String
+	let room: Room
+	let devices: [Device]
 	
 	var body: some View {
 		VStack(alignment: .leading) {
@@ -17,14 +17,14 @@ struct RoomCardView: View {
 				Image(systemName: "square.grid.2x2.fill")
 					.foregroundColor(.font)
 					.font(.system(size:24))
-				Text(title)
+				Text(room.name)
 					.foregroundColor(.font)
 					.font(.system(size:18, weight: .bold, design: .rounded))
 					.padding(.horizontal)
 				Spacer()
 			}
 			Spacer()
-			Text(subtitle)
+			Text("\(room.devices.filter { $0.isConnected }.count) device(s) connected")
 				.foregroundColor(.secondaryFont)
 				.font(.system(size:12, weight: .semibold))
 		}
@@ -36,6 +36,6 @@ struct RoomCardView: View {
 
 struct RoomCard_Previews: PreviewProvider {
     static var previews: some View {
-        RoomCardView(title: "Bedroom", subtitle: "2 devices connected")
+        RoomCardView(room: ModelData.rooms[0], devices: ModelData.rooms[0].devices)
     }
 }

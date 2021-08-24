@@ -8,25 +8,26 @@
 import SwiftUI
 
 struct DeviceCardView: View {
-	let title: String
-	let location: String
+	let device: Device
+	let room: Room?
+
 	var body: some View {
 		HStack {
 			VStack(alignment: .leading){
-				Text(title)
+				Text(device.name)
 					.foregroundColor(.font)
 					.font(.system(size:18, weight: .bold, design: .rounded))
 				Spacer()
-				Text(location)
+				Text(room?.name ?? "")
 					.foregroundColor(.secondaryFont)
 					.font(.system(size:12, weight: .bold, design: .rounded))
 			}
 			Spacer()
 			VStack(alignment: .trailing) {
-				Toggle("", isOn: .constant(true))
+				Toggle("", isOn: .constant(device.isConnected))
 					.toggleStyle(SwitchToggleStyle(tint: .accentColor))
 				Spacer()
-				Text("connected")
+				Text(device.isConnected ? "connected" : "not connected")
 					.foregroundColor(.secondaryFont)
 					.font(.system(size:12, weight: .bold, design: .rounded))
 			}
@@ -39,6 +40,6 @@ struct DeviceCardView: View {
 
 struct DeviceCardView_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceCardView(title: "Smart Lamp 1", location: "Living Room")
+        DeviceCardView(device: ModelData.allDevices[0], room: ModelData.rooms[0])
     }
 }

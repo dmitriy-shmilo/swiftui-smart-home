@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct RoomDetailsView: View {
-	
+	let room: Room
+
 	@Environment(\.presentationMode) var presentation
 	@State private var counterProgress: Double = 0.0
 	private let counterSteps = 100.0
@@ -26,7 +27,7 @@ struct RoomDetailsView: View {
 					}
 					
 					Spacer()
-					Text("Living Room")
+					Text(room.name)
 						.foregroundColor(.font)
 						.font(.system(size: 18, weight: .semibold))
 					Spacer()
@@ -34,8 +35,16 @@ struct RoomDetailsView: View {
 				
 				ScrollView(.horizontal, showsIndicators: false) {
 					HStack {
-						SensorDataCardView(data: "\(floor(24 * counterProgress))° C", subtitle: "Temperature", background: .dataBlue)
-						SensorDataCardView(data: "\(floor(70 * counterProgress))%", subtitle: "Humidity", background: .dataOrange)
+						ForEach(room.sensors.indices) { index in
+							let sensor = room.sensors[index]
+							SensorDataCardView(
+								data: "\(floor(sensor.data * counterProgress)) \(sensor.type.unitLabel)",
+								subtitle: sensor.type.name,
+								background: index.isMultiple(of: 2)
+									? Color.dataBlue
+									: Color.dataOrange
+							)
+						}
 					}
 					.onAppear {
 						Timer.scheduledTimer(
@@ -56,8 +65,8 @@ struct RoomDetailsView: View {
 					.padding(.top)
 				
 				PowerChartView(
-					lastWeekData: [24.5,0, 30.0, 12.2, 41.3, 18.9, 39.7],
-					currentWeekData: [14.5, 25.1, 34.0, 12.5, 37.3, 11.0, 0]
+					lastWeekData: room.consumption[7..<14].map { CGFloat($0) },
+					currentWeekData: room.consumption[0..<7].map { CGFloat($0) }
 				)
 				
 				Text("Devices")
@@ -66,8 +75,9 @@ struct RoomDetailsView: View {
 					.frame(maxWidth: .infinity, alignment: .leading)
 					.padding(.top)
 				
-				DeviceCardView(title: "Smart lamp 1", location: "Living room")
-				DeviceCardView(title: "Smart lamp 2", location: "Living room")
+				ForEach(room.devices) { device in
+					DeviceCardView(device: device, room: room)
+				}
 			}
 			.padding()
 		}
@@ -78,6 +88,6 @@ struct RoomDetailsView: View {
 
 struct RoomDetailsView_Previews: PreviewProvider {
 	static var previews: some View {
-		RoomDetailsView()
+		RoomDetailsView(room: ModelData.rooms[0])
 	}
 }

@@ -25,6 +25,7 @@
 		5DF4002326D4DF03000143F0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4002226D4DF03000143F0 /* Device.swift */; };
 		5DF4002526D4DF6E000143F0 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4002426D4DF6E000143F0 /* Sensor.swift */; };
 		5DF4005526D4F8F6000143F0 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4005426D4F8F6000143F0 /* ModelData.swift */; };
+		5DF4005726D52A1B000143F0 /* Date+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4005626D52A1B000143F0 /* Date+Format.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		5DF4002226D4DF03000143F0 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		5DF4002426D4DF6E000143F0 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
 		5DF4005426D4F8F6000143F0 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		5DF4005626D52A1B000143F0 /* Date+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Format.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				5DF4001F26D4DEC1000143F0 /* Model */,
 				5DB41BA526D2EB060074A300 /* Preview Content */,
 				5DB41BBB26D3CE290074A300 /* RoomDetails */,
+				5DF4005626D52A1B000143F0 /* Date+Format.swift */,
 			);
 			path = SmartHome;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				5DB41BC126D4004D0074A300 /* PowerChartView.swift in Sources */,
 				5DF4002126D4DECD000143F0 /* Room.swift in Sources */,
 				5DB41BBA26D301300074A300 /* DeviceCardView.swift in Sources */,
+				5DF4005726D52A1B000143F0 /* Date+Format.swift in Sources */,
 				5DB41BBD26D3CE3A0074A300 /* RoomDetailsView.swift in Sources */,
 				5DB41BB826D2FEEA0074A300 /* RoomCardView.swift in Sources */,
 				5DB41BA026D2EB050074A300 /* SmartHomeApp.swift in Sources */,

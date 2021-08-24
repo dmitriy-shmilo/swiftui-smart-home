@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+	let featuredRooms = ModelData.rooms[0..<2]
+	let featuredDevices = ModelData.allDevices[0..<4]
+	
 	var body: some View {
 		GeometryReader { proxy in
 			
@@ -23,9 +26,18 @@ struct HomeView: View {
 						ScrollView(.horizontal, showsIndicators: false) {
 							
 							HStack(spacing: 24) {
-								DataCardView(title: "Today", data: "24.55 KWh", subtitle: "Aug 23, 2021", background: .dataBlue)
+								DataCardView(
+									title: "Today",
+									data: String(format: "%.2f KWh", ModelData.energyConsumption(dayRange: 0..<1)),
+									subtitle: Date().formatShortDate(),
+									background: .dataBlue
+								)
 								
-								DataCardView(title: "This Month", data: "478.5 KWh", subtitle: "Aug 2021", background: .dataOrange)
+								DataCardView(
+									title: "This Month",
+									data: String(format: "%.2f KWh", ModelData.energyConsumption(dayRange: 0..<30)),
+									subtitle: Date().formatMonthYear(),
+									background: .dataOrange)
 							}
 							
 						}
@@ -48,11 +60,13 @@ struct HomeView: View {
 						
 						ScrollView(.horizontal, showsIndicators: false) {
 							HStack(spacing: 24) {
-								NavigationLink(destination: RoomDetailsView()) {
-									RoomCardView(title: "Living Room", subtitle: "8 devices connected")
-								}
-								NavigationLink(destination: RoomDetailsView()) {
-									RoomCardView(title: "Bedroom", subtitle: "2 devices connected")
+								ForEach(featuredRooms) { room in
+									NavigationLink(destination: RoomDetailsView(room: room)) {
+										RoomCardView(
+											room: room,
+											devices: room.devices
+										)
+									}
 								}
 							}
 							.padding(.leading, 32)
@@ -77,8 +91,12 @@ struct HomeView: View {
 						ScrollView(.horizontal, showsIndicators: false) {
 							
 							HStack(spacing: 24) {
-								DeviceCardView(title: "Smart Lamp 1", location: "Living Room")
-								DeviceCardView(title: "Smart Lamp 2", location: "Living Room")
+								ForEach(featuredDevices) { device in
+									DeviceCardView(
+										device: device,
+										room: ModelData.room(withId: device.roomId)
+									)
+								}
 							}
 							.padding(.leading, 32)
 						}

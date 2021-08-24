@@ -14,6 +14,34 @@ enum SensorType {
 	case light
 }
 
+extension SensorType {
+	var unitLabel: String {
+		switch self {
+		case .unknown:
+			return ""
+		case .temperature:
+			return "°C"
+		case .humidity:
+			return "%"
+		case .light:
+			return "lx"
+		}
+	}
+	
+	var name: String {
+		switch self {
+		case .unknown:
+			return ""
+		case .temperature:
+			return "Temperature"
+		case .humidity:
+			return "Humidity"
+		case .light:
+			return "Light Level"
+		}
+	}
+}
+
 struct Sensor: Hashable, Identifiable {
 	let id: Int
 	let roomId: Int
@@ -23,16 +51,6 @@ struct Sensor: Hashable, Identifiable {
 
 extension Sensor {
 	var dataLabel: String {
-		let number = String(format: "%.2f", data)
-		switch type {
-		case .unknown:
-			return "\(number)"
-		case .temperature:
-			return "\(number) °C"
-		case .humidity:
-			return "\(number) %"
-		case .light:
-			return "\(number) lx"
-		}
+		String(format: "%.2f %@", data, type.unitLabel)
 	}
 }

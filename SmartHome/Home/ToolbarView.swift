@@ -14,7 +14,7 @@ struct ToolbarView: View {
         		Text("Welcome, Dmitriy")
         			.foregroundColor(.font)
         			.font(.system(size:16, weight: .bold))
-        		Text("Aug 23, 2021")
+        		Text(Date().formatShortDate())
         			.foregroundColor(.secondaryFont)
         			.font(.system(size:12, weight: .semibold))
 			}
