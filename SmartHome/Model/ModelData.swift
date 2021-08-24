@@ -13,11 +13,17 @@ struct ModelData {
 	static let rooms: [Room] = Self.generateRooms()
 	
 	static var allDevices: [Device] {
-		self.rooms.map{ $0.devices }.reduce([], +)
+		Self.rooms.map{ $0.devices }.reduce([], +)
 	}
 	
 	static var allSensors: [Sensor] {
-		self.rooms.map{ $0.sensors }.reduce([], +)
+		Self.rooms.map{ $0.sensors }.reduce([], +)
+	}
+	
+	static func energyConsumption(dayRange: Range<Int>) -> Double {
+		return Self.rooms
+			.map { $0.consumption[dayRange].reduce(0, +) }
+			.reduce(0, +)
 	}
 	
 	private static var lastId = 0
@@ -29,7 +35,7 @@ struct ModelData {
 				name: name,
 				devices: Self.generateDevices(roomId: roomId),
 				sensors: Self.generateSensors(roomId: roomId),
-				consumption: (0...30).map { _ in Double.random(in: 10.0...50.0)}
+				consumption: (0...30).map { _ in Double.random(in: 2.0...15.0)}
 			)
 		}
 	}
