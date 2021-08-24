@@ -21,6 +21,10 @@
 		5DB41BBD26D3CE3A0074A300 /* RoomDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BBC26D3CE3A0074A300 /* RoomDetailsView.swift */; };
 		5DB41BBF26D3CF1E0074A300 /* SensorDataCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BBE26D3CF1E0074A300 /* SensorDataCardView.swift */; };
 		5DB41BC126D4004D0074A300 /* PowerChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB41BC026D4004D0074A300 /* PowerChartView.swift */; };
+		5DF4002126D4DECD000143F0 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4002026D4DECD000143F0 /* Room.swift */; };
+		5DF4002326D4DF03000143F0 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4002226D4DF03000143F0 /* Device.swift */; };
+		5DF4002526D4DF6E000143F0 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4002426D4DF6E000143F0 /* Sensor.swift */; };
+		5DF4005526D4F8F6000143F0 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4005426D4F8F6000143F0 /* ModelData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		5DB41BBC26D3CE3A0074A300 /* RoomDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailsView.swift; sourceTree = "<group>"; };
 		5DB41BBE26D3CF1E0074A300 /* SensorDataCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataCardView.swift; sourceTree = "<group>"; };
 		5DB41BC026D4004D0074A300 /* PowerChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerChartView.swift; sourceTree = "<group>"; };
+		5DF4002026D4DECD000143F0 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		5DF4002226D4DF03000143F0 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		5DF4002426D4DF6E000143F0 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		5DF4005426D4F8F6000143F0 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 				5DB41B9F26D2EB050074A300 /* SmartHomeApp.swift */,
 				5DB41BA326D2EB060074A300 /* Assets.xcassets */,
 				5DB41BB026D2F5BD0074A300 /* Home */,
+				5DF4001F26D4DEC1000143F0 /* Model */,
 				5DB41BA526D2EB060074A300 /* Preview Content */,
 				5DB41BBB26D3CE290074A300 /* RoomDetails */,
 			);
@@ -113,6 +122,17 @@
 				5D9D2BC526D4134400805CBB /* LineGraphShape.swift */,
 			);
 			path = RoomDetails;
+			sourceTree = "<group>";
+		};
+		5DF4001F26D4DEC1000143F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5DF4002226D4DF03000143F0 /* Device.swift */,
+				5DF4005426D4F8F6000143F0 /* ModelData.swift */,
+				5DF4002026D4DECD000143F0 /* Room.swift */,
+				5DF4002426D4DF6E000143F0 /* Sensor.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,11 +205,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DB41BA226D2EB050074A300 /* ContentView.swift in Sources */,
+				5DF4002526D4DF6E000143F0 /* Sensor.swift in Sources */,
 				5DB41BB426D2F6F70074A300 /* ToolbarView.swift in Sources */,
 				5DB41BB226D2F5C90074A300 /* HomeView.swift in Sources */,
 				5DB41BB626D2FE4E0074A300 /* DataCardView.swift in Sources */,
+				5DF4005526D4F8F6000143F0 /* ModelData.swift in Sources */,
 				5DB41BBF26D3CF1E0074A300 /* SensorDataCardView.swift in Sources */,
+				5DF4002326D4DF03000143F0 /* Device.swift in Sources */,
 				5DB41BC126D4004D0074A300 /* PowerChartView.swift in Sources */,
+				5DF4002126D4DECD000143F0 /* Room.swift in Sources */,
 				5DB41BBA26D301300074A300 /* DeviceCardView.swift in Sources */,
 				5DB41BBD26D3CE3A0074A300 /* RoomDetailsView.swift in Sources */,
 				5DB41BB826D2FEEA0074A300 /* RoomCardView.swift in Sources */,
