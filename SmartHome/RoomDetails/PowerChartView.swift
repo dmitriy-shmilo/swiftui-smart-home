@@ -17,17 +17,33 @@ struct PowerChartView: View {
 	var body: some View {
 		
 		GeometryReader { proxy in
-			ZStack {
+			ZStack(alignment: .top) {
 				Group {
 					LineGraphShape(
 						points: makePoints(proxy: proxy, points: lastWeekState), closePath: true)
 						.fill(Color.dataOrange.opacity(0.5))
-
+					
 					LineGraphShape(
 						points:makePoints(proxy: proxy, points: currentWeekState), closePath: true)
 						.fill(Color.dataBlue.opacity(0.5))
 				}
 				.drawingGroup()
+				
+				HStack {
+					Text(Date().formatMonthYear())
+						.foregroundColor(.font)
+						.font(.system(size:16, weight: .bold))
+					Spacer()
+					VStack(spacing: 4) {
+						Text("• This week")
+							.foregroundColor(.dataBlue)
+						Text("• Last week")
+							.foregroundColor(.dataOrange)
+					}
+					.font(.system(size: 14, weight: .bold, design: .rounded))
+					.frame(width: 130)
+				}
+				.padding()
 			}
 		}
 		.frame(height: 250)
