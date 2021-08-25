@@ -32,7 +32,7 @@ struct ContentView: View {
 						}
 					}
 				
-				Text("Rooms List Under Construction")
+				RoomListView(rooms: ModelData.rooms)
     				.tag(RootPage.rooms)
     				.tabItem {
     					Image(systemName: "square.grid.2x2.fill")

@@ -29,7 +29,7 @@ struct RoomCardView: View {
 				.font(.system(size:12, weight: .semibold))
 		}
 		.padding()
-		.frame(width: 240, height: 140)
+		.frame(height: 140)
 		.background(RoundedRectangle(cornerRadius: 10).foregroundColor(.panel))
 	}
 }
