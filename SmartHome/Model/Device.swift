@@ -11,5 +11,6 @@ struct Device: Hashable, Identifiable {
 	let id: Int
 	let roomId: Int
 	let name: String
+	let type: DeviceType
 	let isConnected: Bool
 }

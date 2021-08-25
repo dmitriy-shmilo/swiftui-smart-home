@@ -13,24 +13,22 @@ struct DeviceListItemView: View {
 	
 	var body: some View {
 		HStack {
-			Image(systemName: "hifispeaker.fill")
-				.foregroundColor(.font)
+			Image(systemName: device.type.iconName)
 				.font(.system(size:24))
 			VStack(alignment: .leading, spacing: 4) {
 				Text(device.name)
-					.foregroundColor(.font)
 					.font(.system(size:18, weight: .bold, design: .rounded))
-				Text(room?.name ?? "Unknown Location")
-					.foregroundColor(.secondaryFont)
+				Text("\(room?.name ?? "Unknown Location") (\(device.isConnected ? "connected" : "disconnected"))")
 					.font(.system(size:12, weight: .semibold))
+					.foregroundColor(.secondaryFont)
 			}
 			.padding(.horizontal)
 			Spacer()
 			if room != nil {
 				Image(systemName: "chevron.right")
-					.foregroundColor(.font)
 			}
 		}
+		.foregroundColor(device.isConnected ? .font : .secondaryFont)
 		.padding()
 		.background(RoundedRectangle(cornerRadius: 10).foregroundColor(.panel))
 	}

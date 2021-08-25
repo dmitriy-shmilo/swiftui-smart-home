@@ -45,8 +45,12 @@ struct ModelData {
 	}
 	
 	private static func generateDevices(roomId: Int) -> [Device] {
-		["Smart Lamp 1", "Smart Lamp 2", "Thermostat"].map { name in
-			Device(id: nextId(), roomId: roomId, name: name, isConnected: Bool.random())
+		[
+			("Smart Lamp 1", DeviceType.ligthing),
+			("Smart Lamp 2", DeviceType.ligthing),
+			("Thermostat", DeviceType.temperature)
+		].map { device in
+			Device(id: nextId(), roomId: roomId, name: device.0, type: device.1, isConnected: Bool.random())
 		}
 	}
 	

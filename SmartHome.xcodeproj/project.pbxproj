@@ -30,6 +30,7 @@
 		5DF4006426D6760F000143F0 /* RoomListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4006326D6760F000143F0 /* RoomListItemView.swift */; };
 		5DF4006726D67C19000143F0 /* DeviceListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4006626D67C19000143F0 /* DeviceListView.swift */; };
 		5DF4006926D67C26000143F0 /* DeviceListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4006826D67C26000143F0 /* DeviceListItemView.swift */; };
+		5DF4006B26D68251000143F0 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF4006A26D68251000143F0 /* DeviceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		5DF4006326D6760F000143F0 /* RoomListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomListItemView.swift; sourceTree = "<group>"; };
 		5DF4006626D67C19000143F0 /* DeviceListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListView.swift; sourceTree = "<group>"; };
 		5DF4006826D67C26000143F0 /* DeviceListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListItemView.swift; sourceTree = "<group>"; };
+		5DF4006A26D68251000143F0 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				5DF4005426D4F8F6000143F0 /* ModelData.swift */,
 				5DF4002026D4DECD000143F0 /* Room.swift */,
 				5DF4002426D4DF6E000143F0 /* Sensor.swift */,
+				5DF4006A26D68251000143F0 /* DeviceType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				5DB41BB826D2FEEA0074A300 /* RoomCardView.swift in Sources */,
 				5DB41BA026D2EB050074A300 /* SmartHomeApp.swift in Sources */,
 				5DF4005A26D5477B000143F0 /* RoomListView.swift in Sources */,
+				5DF4006B26D68251000143F0 /* DeviceType.swift in Sources */,
 				5D9D2BC626D4134400805CBB /* LineGraphShape.swift in Sources */,
 				5DB41BAF26D2F21D0074A300 /* Color.swift in Sources */,
 			);
