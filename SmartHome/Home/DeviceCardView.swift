@@ -17,10 +17,12 @@ struct DeviceCardView: View {
 				Text(device.name)
 					.foregroundColor(.font)
 					.font(.system(size:18, weight: .bold, design: .rounded))
+					.lineLimit(1)
 				Spacer()
 				Text(room?.name ?? "")
 					.foregroundColor(.secondaryFont)
 					.font(.system(size:12, weight: .bold, design: .rounded))
+					.lineLimit(1)
 			}
 			Spacer()
 			VStack(alignment: .trailing) {

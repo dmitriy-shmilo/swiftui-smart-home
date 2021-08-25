@@ -21,6 +21,7 @@ struct RoomCardView: View {
 					.foregroundColor(.font)
 					.font(.system(size:18, weight: .bold, design: .rounded))
 					.padding(.horizontal)
+					.lineLimit(1)
 				Spacer()
 			}
 			Spacer()
@@ -29,7 +30,7 @@ struct RoomCardView: View {
 				.font(.system(size:12, weight: .semibold))
 		}
 		.padding()
-		.frame(height: 140)
+		.frame(width: 240, height: 140)
 		.background(RoundedRectangle(cornerRadius: 10).foregroundColor(.panel))
 	}
 }
