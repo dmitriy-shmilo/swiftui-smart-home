@@ -27,7 +27,7 @@ struct DeviceCardView: View {
 			Spacer()
 			VStack(alignment: .trailing) {
 				Toggle("", isOn: .constant(device.isConnected))
-					.toggleStyle(SwitchToggleStyle(tint: .accentColor))
+					.toggleStyle(DeviceConnectionToggleStyle())
 				Spacer()
 				Text(device.isConnected ? "connected" : "not connected")
 					.foregroundColor(.secondaryFont)
