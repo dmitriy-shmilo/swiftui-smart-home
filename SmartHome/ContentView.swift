@@ -41,7 +41,7 @@ struct ContentView: View {
 							.font(.system(size:12, weight: .bold))
 					}
 					
-				Text("Device List Under Construction")
+				DeviceListView(devices: ModelData.allDevices)
     				.tag(RootPage.devices)
     				.tabItem {
     					Image(systemName: "hifispeaker.fill")
