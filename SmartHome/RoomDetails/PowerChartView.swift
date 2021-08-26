@@ -19,12 +19,17 @@ struct PowerChartView: View {
 		GeometryReader { proxy in
 			ZStack(alignment: .top) {
 				Group {
+					let lowerBound = min(lastWeekState.min() ?? 0.0,
+										 currentWeekState.min() ?? 0.0)
+					let upperBound = max(lastWeekState.max() ?? 0.0,
+										 currentWeekState.max() ?? 0.0)
+					let range = lowerBound...upperBound
 					LineGraphShape(
-						points: makePoints(proxy: proxy, points: lastWeekState), closePath: true)
+						points: makePoints(proxy: proxy, points: lastWeekState, within: range), closePath: true)
 						.fill(Color.dataOrange.opacity(0.5))
 					
 					LineGraphShape(
-						points:makePoints(proxy: proxy, points: currentWeekState), closePath: true)
+						points:makePoints(proxy: proxy, points: currentWeekState, within: range), closePath: true)
 						.fill(Color.dataBlue.opacity(0.5))
 				}
 				.drawingGroup()
@@ -61,11 +66,17 @@ struct PowerChartView: View {
 	
 	func makePoints(
 		proxy: GeometryProxy,
-		points: [CGFloat]) -> [CGPoint] {
-		points.enumerated().map { (i, v) in
+		points: [CGFloat],
+		within: ClosedRange<CGFloat>) -> [CGPoint] {
+		let delta = within.upperBound - within.lowerBound
+		let max = within.upperBound + delta != 0 ? delta : 1
+		let min = within.lowerBound
+		let ratio = (proxy.size.height - 0) / (max - min)
+		
+		return points.enumerated().map { (i, v) in
 			CGPoint(
 				x: CGFloat(i) * proxy.size.width / CGFloat(points.count - 1),
-				y: proxy.size.height - v * 2 // TODO: use min and max data point to figure out chart scale
+				y: proxy.size.height - ratio * (v - min) + 1
 			)
 		}
 	}

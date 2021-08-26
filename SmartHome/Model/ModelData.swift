@@ -39,7 +39,7 @@ struct ModelData {
 				name: name,
 				devices: Self.generateDevices(roomId: roomId),
 				sensors: Self.generateSensors(roomId: roomId),
-				consumption: (0...30).map { _ in Double.random(in: 2.0...15.0)}
+				consumption: (0...30).map { _ in Double.random(in: 5.0...10.0)}
 			)
 		}
 	}
