@@ -35,7 +35,7 @@ struct DeviceCardView: View {
 			}
 		}
 		.padding()
-		.frame(width: 380, height: 120)
+		.frame(height: 120)
 		.background(RoundedRectangle(cornerRadius: 10).foregroundColor(.panel))
 	}
 }
