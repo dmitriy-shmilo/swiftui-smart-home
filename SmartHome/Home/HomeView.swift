@@ -24,8 +24,9 @@ struct HomeView: View {
 						Text("Energy Usage")
 							.foregroundColor(.font)
 							.font(.system(size:16, weight: .bold))
+							.padding(.leading, 32)
+
 						ScrollView(.horizontal, showsIndicators: false) {
-							
 							HStack(spacing: 24) {
 								DataCardView(
 									title: "Today",
@@ -40,10 +41,13 @@ struct HomeView: View {
 									subtitle: Date().formatMonthYear(),
 									background: .dataOrange)
 							}
-							
+							.padding(.leading, 32 + proxy.safeAreaInsets.leading)
+							.padding(.trailing, 32 + proxy.safeAreaInsets.trailing)
 						}
+						.padding(.leading, -proxy.safeAreaInsets.leading)
+						.padding(.trailing, -proxy.safeAreaInsets.trailing)
 					}
-					.padding()
+					.padding(.vertical)
 					
 					VStack(alignment: .leading) {
 						HStack {
@@ -72,8 +76,11 @@ struct HomeView: View {
 									}
 								}
 							}
-							.padding(.leading, 32)
+							.padding(.leading, 32 + proxy.safeAreaInsets.leading)
+							.padding(.trailing, 32 + proxy.safeAreaInsets.trailing)
 						}
+						.padding(.leading, -proxy.safeAreaInsets.leading)
+						.padding(.trailing, -proxy.safeAreaInsets.trailing)
 					}
 					.padding(.vertical)
 					
@@ -94,7 +101,6 @@ struct HomeView: View {
 						.padding(.horizontal, 32)
 						
 						ScrollView(.horizontal, showsIndicators: false) {
-							
 							HStack(spacing: 24) {
 								ForEach(featuredDevices) { device in
 									DeviceCardView(
@@ -103,8 +109,11 @@ struct HomeView: View {
 									)
 								}
 							}
-							.padding(.leading, 32)
+							.padding(.leading, 32 + proxy.safeAreaInsets.leading)
+							.padding(.trailing, 32 + proxy.safeAreaInsets.trailing)
 						}
+						.padding(.leading, -proxy.safeAreaInsets.leading)
+						.padding(.trailing, -proxy.safeAreaInsets.trailing)
 					}
 					.padding(.vertical)
 				}
