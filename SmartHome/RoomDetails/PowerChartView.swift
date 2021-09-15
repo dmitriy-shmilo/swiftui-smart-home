@@ -20,17 +20,32 @@ struct PowerChartView: View {
 			ZStack(alignment: .top) {
 				Group {
 					let lowerBound = min(lastWeekState.min() ?? 0.0,
-										 currentWeekState.min() ?? 0.0)
+										 currentWeekState.min() ?? 0.0) * 0.8
 					let upperBound = max(lastWeekState.max() ?? 0.0,
-										 currentWeekState.max() ?? 0.0)
+										 currentWeekState.max() ?? 0.0) * 1.2
 					let range = lowerBound...upperBound
-					LineGraphShape(
-						points: makePoints(proxy: proxy, points: lastWeekState, within: range), closePath: true)
-						.fill(Color.dataOrange.opacity(0.5))
 					
 					LineGraphShape(
-						points:makePoints(proxy: proxy, points: currentWeekState, within: range), closePath: true)
-						.fill(Color.dataBlue.opacity(0.5))
+						points: makePoints(proxy: proxy, points: lastWeekState, within: range),
+						closePath: true
+					)
+					.fill(Color.dataOrange.opacity(0.5))
+					LineGraphShape(
+						points: makePoints(proxy: proxy, points: lastWeekState, within: range),
+						closePath: false
+					)
+					.stroke(Color.dataOrange, style: .init(lineWidth: 1, lineCap: .round, lineJoin: .round, miterLimit: 10.0))
+					
+					LineGraphShape(
+						points:makePoints(proxy: proxy, points: currentWeekState, within: range),
+						closePath: true
+					)
+					.fill(Color.dataBlue.opacity(0.5))
+					LineGraphShape(
+						points:makePoints(proxy: proxy, points: currentWeekState, within: range),
+						closePath: true
+					)
+					.stroke(Color.dataBlue, style: .init(lineWidth: 1, lineCap: .round, lineJoin: .round, miterLimit: 10.0))
 				}
 				.drawingGroup()
 				
