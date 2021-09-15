@@ -67,18 +67,22 @@ struct PowerChartView: View {
 	func makePoints(
 		proxy: GeometryProxy,
 		points: [CGFloat],
-		within: ClosedRange<CGFloat>) -> [CGPoint] {
-		let delta = within.upperBound - within.lowerBound
-		let max = within.upperBound + delta != 0 ? delta : 1
-		let min = within.lowerBound
+		within range: ClosedRange<CGFloat>) -> [CGPoint] {
+		
+		let delta = range.upperBound - range.lowerBound
+		let max = delta != 0 ? range.upperBound : 1
+		let min:CGFloat = delta != 0 ? range.lowerBound : 0
 		let ratio = (proxy.size.height - 0) / (max - min)
 		
-		return points.enumerated().map { (i, v) in
-			CGPoint(
+		let result = points.enumerated().map { (i, v) -> CGPoint in
+			print(ratio * (v - min))
+			return CGPoint(
 				x: CGFloat(i) * proxy.size.width / CGFloat(points.count - 1),
-				y: proxy.size.height - ratio * (v - min) + 1
+				y: proxy.size.height - ratio * (v - min)
 			)
 		}
+		
+		return result
 	}
 }
 
